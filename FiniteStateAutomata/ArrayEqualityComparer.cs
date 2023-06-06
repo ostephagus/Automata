@@ -23,5 +23,16 @@ namespace FiniteStateAutomata
             }
             return true;
         }
+
+        public int GetHashCode(TArray[] obj)
+        {
+            int hash = 17; //Choose a random prime
+            foreach (TArray item in obj)
+            {
+                hash = hash * 23 + item.GetHashCode(); //Do some multiplying and adding with some primes
+            }
+
+            return hash;
+        }
     }
 }
